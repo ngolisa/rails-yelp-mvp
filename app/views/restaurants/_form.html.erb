@@ -1,29 +1,8 @@
-<%= form_for(@restaurant) do |f| %>
-<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<%= simple_form_for [@restaurant] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :phone_number %>
+  <%= f.input :category %>
 
-<div>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-</div>
-
-<div>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-</div>
-
-
-<div>
-  <%= f.label :category %>
-  <%= f.text_field :category %>
-</div>
-
-<div>
-  <%= f.label :phone_number %>
-  <%= f.text_field :phone_number %>
-</div>
-
-
-<%= f.submit %>
-
-
+  <%= f.submit "add a review", class: "btn btn-primary" %>
 <% end %>
